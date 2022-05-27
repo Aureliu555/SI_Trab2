@@ -1,4 +1,4 @@
-package trab2;
+package model;
 
 import jakarta.persistence.*;
 

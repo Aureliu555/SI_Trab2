@@ -1,4 +1,4 @@
-package trab2;
+package model;
 
 import jakarta.persistence.*;
 
@@ -6,40 +6,28 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "registos_nao_processados")
-public class RegistosNaoProcessado {
+@Table(name = "registos_processados")
+public class RegistosProcessado {
     @Id
-    @Column(name = "id_gps", nullable = false, length = 50)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_registo_p", nullable = false)
+    private Integer id;
 
-    @MapsId
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_gps", nullable = false)
-    private EquipamentoGp equipamentoGps;
-
-    @Column(name = "latitude", precision = 8, scale = 5)
+    @Column(name = "latitude", nullable = false, precision = 8, scale = 5)
     private BigDecimal latitude;
 
-    @Column(name = "longitude", precision = 8, scale = 5)
+    @Column(name = "longitude", nullable = false, precision = 8, scale = 5)
     private BigDecimal longitude;
 
-    @Column(name = "registo_data")
+    @Column(name = "registo_data", nullable = false)
     private LocalDate registoData;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public EquipamentoGp getEquipamentoGps() {
-        return equipamentoGps;
-    }
-
-    public void setEquipamentoGps(EquipamentoGp equipamentoGps) {
-        this.equipamentoGps = equipamentoGps;
     }
 
     public BigDecimal getLatitude() {
