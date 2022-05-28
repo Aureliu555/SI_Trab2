@@ -3,6 +3,7 @@ package exc1.a;
 import jakarta.persistence.*;
 
 public class l {
+    //procedure
     public void disableClientOnDeletion(Boolean condition) throws Exception {
         EntityManager em = null;
         EntityManagerFactory emf = null;
