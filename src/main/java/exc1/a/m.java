@@ -3,6 +3,7 @@ package exc1.a;
 import jakarta.persistence.*;
 
 public class m {
+    //function
     public void updateVehicleAlarms() throws Exception {
         EntityManager em = null;
         EntityManagerFactory emf = null;
