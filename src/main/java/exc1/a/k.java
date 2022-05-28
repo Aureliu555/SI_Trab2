@@ -2,7 +2,9 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
+
 public class k {
+    //procedure
     public void deleteInvalidRecordsFromUnprocessed() throws Exception {
         EntityManager em = null;
         EntityManagerFactory emf = null;
