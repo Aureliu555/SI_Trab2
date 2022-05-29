@@ -2,14 +2,11 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
-public class d {
-    public void addPrivateClient(Integer cc, Integer nif, String name, String telephone, String address, Integer cpRef)
-            throws Exception {
-                EntityManager em = null;
-                EntityManagerFactory emf = null;
+public class D {
+    public void addPrivateClient(Integer cc, Integer nif, String name, String telephone, String address, Integer cpRef) throws Exception {
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+            EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
             Query q = em.createNativeQuery("select add_to_clienteParticular(?1, ?2, ?3, ?4, ?5, ?6)");
 
             q.setParameter(1, cc);
@@ -26,7 +23,6 @@ public class d {
             System.out.println(e.getMessage());
             throw e;
         } finally {
-            assert em != null;
             em.close();
             emf.close();
         }
