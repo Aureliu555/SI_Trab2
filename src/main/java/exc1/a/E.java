@@ -2,14 +2,11 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
-public class e {
-    public void countAlarms(Integer year, String regTag)
-            throws Exception {
-        EntityManager em = null;
-        EntityManagerFactory emf = null;
+public class E {
+    public void countAlarms(Integer year, String regTag) throws Exception {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
             Query q = em.createNativeQuery("select count_num_of_alarms(?1, ?2)");
 
             q.setParameter(1, year);

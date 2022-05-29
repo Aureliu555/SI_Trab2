@@ -3,14 +3,14 @@ package exc1.a;
 import jakarta.persistence.*;
 
 
-public class k {
+public class K {
     //procedure
     public void deleteInvalidRecordsFromUnprocessed() throws Exception {
-        EntityManager em = null;
-        EntityManagerFactory emf = null;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("call delete_Invalido_in_registoNProcessado()");
 
             q.executeUpdate();

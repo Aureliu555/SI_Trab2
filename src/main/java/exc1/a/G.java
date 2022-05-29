@@ -2,14 +2,13 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
-public class g {
+public class G {
     public void zonaVerdeValida(Double zvLongitude, Double zvLatitude, Double zvRadius, Double regLongitude, Double regLatitude) throws Exception {
-                EntityManager em = null;
-                EntityManagerFactory emf = null;
-
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("select zonaVerdeValida(?1, ?2, ?3, ?4, ?5)");
 
             q.setParameter(1, zvLongitude);
@@ -32,11 +31,11 @@ public class g {
     }
 
     public void zonaVerdeValidaTest(Double regLatitude) throws Exception {
-                EntityManager em = null;
-                EntityManagerFactory emf = null;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("select zonaVerdeValidaTest(?1)");
 
             q.setParameter(1, regLatitude);
@@ -55,11 +54,11 @@ public class g {
     }
 
     public void generateAlarm() throws Exception {
-                EntityManager em = null;
-                EntityManagerFactory emf = null;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("select generate_alarme()");
 
             q.executeUpdate();

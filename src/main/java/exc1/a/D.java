@@ -7,7 +7,9 @@ public class D {
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
             EntityManager em = emf.createEntityManager();
         try {
-            Query q = em.createNativeQuery("select add_to_clienteParticular(?1, ?2, ?3, ?4, ?5, ?6)");
+            em.getTransaction().begin();
+
+            Query q = em.createNativeQuery("call add_to_clienteparticular(?1, ?2, ?3, ?4, ?5, ?6)");
 
             q.setParameter(1, cc);
             q.setParameter(2, nif);
@@ -28,18 +30,21 @@ public class D {
         }
     }
 
-    public void removePrivateClient(Integer cc) throws Exception {
-        EntityManager em = null;
-        EntityManagerFactory emf = null;
+    public int removePrivateClient(Integer cc) throws Exception {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("select remove_from_clienteParticular(?1)");
 
             q.setParameter(1, cc);
 
-            q.executeUpdate();
+            int a = q.executeUpdate();
+
             em.getTransaction().commit();
+
+            return a;
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -51,13 +56,12 @@ public class D {
         }
     }
 
-    public void updatePrivateClient(Integer cc, Integer nif, String name, String telephone, String address,
-                                              Integer oldNif,Integer cpRef) throws Exception {
-        EntityManager em = null;
-        EntityManagerFactory emf = null;
+    public void updatePrivateClient(Integer cc, Integer nif, String name, String telephone, String address,Integer oldNif,Integer cpRef) throws Exception {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("select update_from_clienteParticular(?1, ?2, ?3, ?4, ?5, ?6, ?7)");
 
             q.setParameter(1, cc);

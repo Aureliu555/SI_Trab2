@@ -2,14 +2,14 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
-public class l {
+public class L {
     //procedure
     public void disableClientOnDeletion(Boolean condition) throws Exception {
-        EntityManager em = null;
-        EntityManagerFactory emf = null;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("call disable_Cliente_on_deletion(?1)");
 
             q.setParameter(1, condition);

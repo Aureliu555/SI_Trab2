@@ -2,13 +2,13 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
-public class j {
+public class J {
     public void insertIntoAlarmsAndProcessedRegistration() throws Exception {
-        EntityManager em = null;
-        EntityManagerFactory emf = null;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("select insert_into_Alarme_and_Processado()");
 
             q.executeUpdate();

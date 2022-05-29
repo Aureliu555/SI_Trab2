@@ -2,13 +2,13 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
-public class i {
+public class I {
     public void createViewOfAlarm() throws Exception {
-        EntityManager em = null;
-        EntityManagerFactory emf = null;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
+        EntityManager em = emf.createEntityManager();
         try {
-            emf = Persistence.createEntityManagerFactory("t41dg8");
-            em = emf.createEntityManager();
+            em.getTransaction().begin();
+
             Query q = em.createNativeQuery("create or replace view list_Alarme\n" +
                     "as select alarme, v.matricula, v.nomeCondutor, pr.longitude, pr.latitude\n" +
                     "from ((alarme inner join processado as pr on (alarme.id = pr.id)) inner join gps on " +
