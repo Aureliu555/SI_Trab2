@@ -15,7 +15,6 @@ public class I {
                     "(pr.gps = gps.id)) inner join veiculo as v\n" +
                     "\t\ton (gps.matricula = v.matricula)");
 
-
             q.executeUpdate();
             em.getTransaction().commit();
 
