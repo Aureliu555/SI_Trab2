@@ -2,6 +2,7 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
+//Already functional (working)
 public class F {
     public void processUnprocessedRegistration() throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");

@@ -2,6 +2,7 @@ package exc1.a;
 
 import jakarta.persistence.*;
 
+//Already functional
 public class D {
     public void addPrivateClient(Integer cc, Integer nif, String name, String telephone, String address, Integer cpRef) throws Exception {
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
