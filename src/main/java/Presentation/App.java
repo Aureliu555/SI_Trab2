@@ -5,7 +5,7 @@ import exc1.a.*;
 public class App {
     @SuppressWarnings("unchecked")
     public static void main( String[] args ) throws Exception {
-        K test_k = new K();
+        M test_m = new M();
 //        test_d.removePrivateClient(75485454);                                                                                     Functional
 //        test_d.addPrivateClient(11112222, 200000011, "Teste to Test", "999111222", "Rua dos Testes", 765865645);                  Functional
 //        test_d.updatePrivateClient(10000024,200110011, "Edgar Calabroso", "999111222", "Rua dos Testes",200000011,765865645);     Functional
@@ -15,5 +15,6 @@ public class App {
 //        test_h.createAndAssociateVehicle("10-PG-20",689425389,"Pedro Miguel", "912345678",0,2, null, null, null);                 Functional
 //        test_i.createViewOfAlarm();                                                                                               Functional
 //        test_z.deleteInvalidRecordsFromUnprocessed();                                                                             Functional
+          test_m.testNumAlarms_trigger();
     }
 }

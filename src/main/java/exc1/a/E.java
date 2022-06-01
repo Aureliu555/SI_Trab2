@@ -11,7 +11,7 @@ public class E {
         try {
             em.getTransaction().begin();
 
-            Query q = em.createNativeQuery("select count_num_of_alarms(?1, ?2)");
+              Query q = em.createNativeQuery("select count_num_of_alarms(?1, ?2)");
 
             q.setParameter(1, year);
             q.setParameter(2, regTag);
