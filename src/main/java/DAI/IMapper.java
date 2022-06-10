@@ -1,8 +1,8 @@
 package DAI;
 
 public interface IMapper<Table, TId> {
-    void Create(Table e) throws Exception;
-    Table Read(TId id) throws Exception;
-    void Update(Table e) throws Exception;
-    void Delete(Table e) throws Exception;
+    void create(Table e) throws Exception;
+    Table read(TId id) throws Exception;
+    void update(Table e) throws Exception;
+    void delete(Table e) throws Exception;
 }

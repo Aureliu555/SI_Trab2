@@ -23,20 +23,20 @@ public class Cliente {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cpnif")
-    private Clienteparticular cpnif;
+    private ClienteParticular cpnif;
 
     @Version
     @Column(name = "vrs")
     private Integer vrs;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "cliente")
-    private Clienteparticular clienteparticular;
+    private ClienteParticular clienteparticular;
 
     @OneToMany(mappedBy = "nif")
     private Set<Veiculo> veiculos = new LinkedHashSet<>();
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "cliente")
-    private Clienteinstitucional clienteinstitucional;
+    private ClienteInstitucional clienteinstitucional;
 
     public Integer getId() {
         return id;
@@ -70,11 +70,11 @@ public class Cliente {
         this.morada = morada;
     }
 
-    public Clienteparticular getCpnif() {
+    public ClienteParticular getCpnif() {
         return cpnif;
     }
 
-    public void setCpnif(Clienteparticular cpnif) {
+    public void setCpnif(ClienteParticular cpnif) {
         this.cpnif = cpnif;
     }
 
@@ -86,11 +86,11 @@ public class Cliente {
         this.vrs = vrs;
     }
 
-    public Clienteparticular getClienteparticular() {
+    public ClienteParticular getClienteparticular() {
         return clienteparticular;
     }
 
-    public void setClienteparticular(Clienteparticular clienteparticular) {
+    public void setClienteparticular(ClienteParticular clienteparticular) {
         this.clienteparticular = clienteparticular;
     }
 
@@ -102,11 +102,11 @@ public class Cliente {
         this.veiculos = veiculos;
     }
 
-    public Clienteinstitucional getClienteinstitucional() {
+    public ClienteInstitucional getClienteinstitucional() {
         return clienteinstitucional;
     }
 
-    public void setClienteinstitucional(Clienteinstitucional clienteinstitucional) {
+    public void setClienteinstitucional(ClienteInstitucional clienteinstitucional) {
         this.clienteinstitucional = clienteinstitucional;
     }
 

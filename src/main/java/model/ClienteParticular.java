@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "clienteparticular", indexes = {
         @Index(name = "clienteparticular_cc_key", columnList = "cc", unique = true)
 })
-public class Clienteparticular {
+public class ClienteParticular {
     @Id
     @Column(name = "nif", nullable = false)
     private Integer id;
