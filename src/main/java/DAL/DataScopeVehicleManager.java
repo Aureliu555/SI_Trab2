@@ -1,8 +1,10 @@
 package DAL;
 
-import DAO.Mappers.MapperAlarme;
+import DAO.Mappers.MapperCliente;
 import DAO.Repositories.RepositoryAlarme;
+import DAO.Repositories.RepositoryCliente;
 import model.Alarme;
+import model.Cliente;
 
 import java.util.List;
 
@@ -11,29 +13,29 @@ public class DataScopeVehicleManager extends AbstractDataScope implements AutoCl
         super();
     }
 
-    public List<Alarme> getAllAlarms() throws Exception {
-        return new RepositoryAlarme().getAll();
+    public List<Cliente> getAllClients() throws Exception {
+        return new RepositoryCliente().getAll();
     }
 
-    public Alarme findStudent(Integer Id) throws Exception  {
-        return new MapperAlarme().read(Id);
+    public Cliente findStudent(Integer Id) throws Exception  {
+        return new MapperCliente().read(Id);
     }
 
-    public void deleteStudent(Alarme a) throws Exception {
-        new MapperAlarme().delete(a);
+    public void deleteStudent(Cliente c) throws Exception {
+        new MapperCliente().delete(c);
     }
 
     public void deleteAlarmeByKey(Integer Id) throws Exception {
-        Alarme a = new Alarme();
-        a.setId(Id);
-        new MapperAlarme().delete(a);
+        Cliente c = new Cliente();
+        c.setId(Id);
+        new MapperCliente().delete(c);
     }
 
-    public void updateStudent(Alarme a) throws Exception {
-        new MapperAlarme().update(a);
+    public void updateStudent(Cliente c) throws Exception {
+        new MapperCliente().update(c);
     }
 
-    public void insertAlarme(Alarme a) throws Exception {
-        new MapperAlarme().create(a);
+    public void insertAlarme(Cliente c) throws Exception {
+        new MapperCliente().create(c);
     }
 }
