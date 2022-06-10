@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "registonprocessado")
-public class Registonprocessado {
+public class RegistoNProcessado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

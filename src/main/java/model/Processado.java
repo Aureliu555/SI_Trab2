@@ -27,7 +27,7 @@ public class Processado {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "rnp")
-    private Registonprocessado rnp;
+    private RegistoNProcessado rnp;
 
     @Version
     @Column(name = "vrs")
@@ -76,11 +76,11 @@ public class Processado {
         this.gps = gps;
     }
 
-    public Registonprocessado getRnp() {
+    public RegistoNProcessado getRnp() {
         return rnp;
     }
 
-    public void setRnp(Registonprocessado rnp) {
+    public void setRnp(RegistoNProcessado rnp) {
         this.rnp = rnp;
     }
 

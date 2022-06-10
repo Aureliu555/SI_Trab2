@@ -12,7 +12,7 @@ public class Invalido {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id", nullable = false)
-    private Registonprocessado registonprocessado;
+    private RegistoNProcessado registonprocessado;
 
     @Version
     @Column(name = "vrs")
@@ -26,11 +26,11 @@ public class Invalido {
         this.id = id;
     }
 
-    public Registonprocessado getRegistonprocessado() {
+    public RegistoNProcessado getRegistonprocessado() {
         return registonprocessado;
     }
 
-    public void setRegistonprocessado(Registonprocessado registonprocessado) {
+    public void setRegistonprocessado(RegistoNProcessado registonprocessado) {
         this.registonprocessado = registonprocessado;
     }
 

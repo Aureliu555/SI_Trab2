@@ -34,7 +34,7 @@ public class Veiculo {
     private Integer vrs;
 
     @OneToMany(mappedBy = "matricula")
-    private Set<Zonaverde> zonaverdes = new LinkedHashSet<>();
+    private Set<ZonaVerde> zonaVerdes = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "matricula")
     private Set<model.Gps> matricula = new LinkedHashSet<>();
@@ -95,12 +95,12 @@ public class Veiculo {
         this.vrs = vrs;
     }
 
-    public Set<Zonaverde> getZonaverdes() {
-        return zonaverdes;
+    public Set<ZonaVerde> getZonaverdes() {
+        return zonaVerdes;
     }
 
-    public void setZonaverdes(Set<Zonaverde> zonaverdes) {
-        this.zonaverdes = zonaverdes;
+    public void setZonaverdes(Set<ZonaVerde> zonaVerdes) {
+        this.zonaVerdes = zonaVerdes;
     }
 
     public Set<model.Gps> getMatricula() {
