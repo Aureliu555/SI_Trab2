@@ -1,4 +1,4 @@
-package DataMapper;
+package DAI;
 
 public interface IMapper<Table, TId> {
     void Create(Table e) throws Exception;

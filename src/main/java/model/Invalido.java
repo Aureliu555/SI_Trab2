@@ -2,11 +2,9 @@ package model;
 
 import jakarta.persistence.*;
 
-import java.time.Instant;
-
 @Entity
-@Table(name = "alarme")
-public class Alarme {
+@Table(name = "invalido")
+public class Invalido {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
@@ -14,10 +12,7 @@ public class Alarme {
     @MapsId
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id", nullable = false)
-    private Processado processado;
-
-    @Column(name = "datahora", nullable = false)
-    private Instant datahora;
+    private Registonprocessado registonprocessado;
 
     @Version
     @Column(name = "vrs")
@@ -31,20 +26,12 @@ public class Alarme {
         this.id = id;
     }
 
-    public Processado getProcessado() {
-        return processado;
+    public Registonprocessado getRegistonprocessado() {
+        return registonprocessado;
     }
 
-    public void setProcessado(Processado processado) {
-        this.processado = processado;
-    }
-
-    public Instant getDatahora() {
-        return datahora;
-    }
-
-    public void setDatahora(Instant datahora) {
-        this.datahora = datahora;
+    public void setRegistonprocessado(Registonprocessado registonprocessado) {
+        this.registonprocessado = registonprocessado;
     }
 
     public Integer getVrs() {

@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JpaBuddyIdeaProjectConfig" isReverseEngineeringLicenceAccepted="true">
+  <component name="JpaBuddyIdeaProjectConfig" migrateIndexesAndConstraints="true" isReverseEngineeringLicenceAccepted="true">
     <option name="defaultUnitInitialized" value="true" />
-    <option name="reverseEngineeringLastDbConnectionId" value="0b502d7d-9468-489b-b9a1-dba09a8b91fe" />
-    <option name="reLastEntityCreationPackage" value="src/main/java/aula_practica" />
+    <option name="reverseEngineeringLastDbConnectionId" value="c3d2e5c9-b051-470d-abdd-ac63587257c8" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/model" />
     <reUseDbSnapshotConnections>
       <dbConnection id="312d695b-8acb-48ee-838a-ee874ecfc5fb" />
+      <dbConnection id="c3fabaf1-4b56-458a-8871-dba69dc790da" />
+      <dbConnection id="45352183-c4bf-4fef-b9ae-b729f7bffd33" />
+      <dbConnection id="c3d2e5c9-b051-470d-abdd-ac63587257c8" />
     </reUseDbSnapshotConnections>
     <option name="reIgnoreSlowDbConnections">
       <ignoreDs id="312d695b-8acb-48ee-838a-ee874ecfc5fb" />
+      <ignoreDs id="c3fabaf1-4b56-458a-8871-dba69dc790da" />
+      <ignoreDs id="29d80eee-79d6-4344-a4d5-3401b90b943d" />
     </option>
   </component>
 </project>
