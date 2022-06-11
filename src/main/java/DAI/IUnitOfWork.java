@@ -1,4 +1,4 @@
-package UnitOfWork;
+package DAI;
 
 public interface IUnitOfWork {
     void NotifyInsert(Object entity);
