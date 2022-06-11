@@ -31,10 +31,8 @@ public class MapperClienteParticular implements IMapper<ClienteParticular, Integ
             ds.validateWork();
 
             return c;
-
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
@@ -52,8 +50,7 @@ public class MapperClienteParticular implements IMapper<ClienteParticular, Integ
             ds.validateWork();
         }
 
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
@@ -72,8 +69,7 @@ public class MapperClienteParticular implements IMapper<ClienteParticular, Integ
             ds.validateWork();
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }

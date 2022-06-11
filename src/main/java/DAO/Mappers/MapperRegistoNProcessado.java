@@ -32,8 +32,7 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
             return rnp;
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
@@ -51,12 +50,10 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
             ds.validateWork();
         }
 
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
-
     }
 
     public void delete(RegistoNProcessado rnp) throws Exception {
@@ -71,11 +68,9 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
             ds.validateWork();
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
-
     }
 }

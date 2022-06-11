@@ -17,25 +17,25 @@ public class DataScopeVehicleManager extends AbstractDataScope implements AutoCl
         return new RepositoryCliente().getAll();
     }
 
-    public Cliente findStudent(Integer Id) throws Exception  {
+    public Cliente findClient(Integer Id) throws Exception  {
         return new MapperCliente().read(Id);
     }
 
-    public void deleteStudent(Cliente c) throws Exception {
+    public void deleteClient(Cliente c) throws Exception {
         new MapperCliente().delete(c);
     }
 
-    public void deleteAlarmeByKey(Integer Id) throws Exception {
+    public void deleteClientById(Integer Id) throws Exception {
         Cliente c = new Cliente();
         c.setId(Id);
         new MapperCliente().delete(c);
     }
 
-    public void updateStudent(Cliente c) throws Exception {
+    public void updateClient(Cliente c) throws Exception {
         new MapperCliente().update(c);
     }
 
-    public void insertAlarme(Cliente c) throws Exception {
+    public void insertClient(Cliente c) throws Exception {
         new MapperCliente().create(c);
     }
 }

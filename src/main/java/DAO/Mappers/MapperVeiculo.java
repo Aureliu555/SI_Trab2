@@ -58,7 +58,6 @@ public class MapperVeiculo implements IMapper<Veiculo, String> {
         }
 
     }
-
     public void delete(Veiculo v) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -75,6 +74,5 @@ public class MapperVeiculo implements IMapper<Veiculo, String> {
             System.out.println(e.getMessage());
             throw e;
         }
-
     }
 }

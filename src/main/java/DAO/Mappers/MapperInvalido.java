@@ -32,8 +32,7 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
             return ri;
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
@@ -51,8 +50,7 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
             ds.validateWork();
         }
 
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
@@ -71,8 +69,7 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
             ds.validateWork();
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }

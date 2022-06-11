@@ -32,8 +32,7 @@ public class MapperGps implements IMapper<Gps, Integer> {
             return g;
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
@@ -51,8 +50,7 @@ public class MapperGps implements IMapper<Gps, Integer> {
             ds.validateWork();
         }
 
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
@@ -71,11 +69,9 @@ public class MapperGps implements IMapper<Gps, Integer> {
             ds.validateWork();
 
         }
-        catch(Exception e)
-        {
+        catch(Exception e){
             System.out.println(e.getMessage());
             throw e;
         }
-
     }
 }
