@@ -66,11 +66,11 @@ public class NoStoredProcedure {
                     vehicle.setNumalarmes(alarms);
                     vehicle.setGps(mGps.read(gps));
 
-                    rv.save(vehicle);
+                    rv.add(vehicle);
                 }
 
 
-            if (longitude != null && latitude != null && radius != null) {
+            if (latitude != null && longitude != null && radius != null) {
                 RepositoryZonaVerde rzv = new RepositoryZonaVerde();
 
                 MapperVeiculo mv = new MapperVeiculo();

@@ -44,7 +44,9 @@ public class MapperVeiculo implements IMapper<Veiculo, String> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
+            String vToSee = v.getId();
             Veiculo v1 = em.find(Veiculo.class, v.getId(),LockModeType.PESSIMISTIC_WRITE );
+
             if (v1 == null)
                 throw new java.lang.IllegalAccessException("Entidade inexistente");
             v1.setId(v.getId());

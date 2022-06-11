@@ -2,7 +2,7 @@ package model;
 
 import jakarta.persistence.*;
 
-import java.time.Instant;
+import java.sql.Timestamp;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -15,7 +15,7 @@ public class Gps {
     private Integer id;
 
     @Column(name = "marcatemporal", nullable = false)
-    private Instant marcatemporal;
+    private Timestamp marcatemporal;
 
     @Column(name = "longitude")
     private Double longitude;
@@ -48,11 +48,11 @@ public class Gps {
         this.id = id;
     }
 
-    public Instant getMarcatemporal() {
+    public Timestamp getMarcatemporal() {
         return marcatemporal;
     }
 
-    public void setMarcatemporal(Instant marcatemporal) {
+    public void setMarcatemporal(Timestamp marcatemporal) {
         this.marcatemporal = marcatemporal;
     }
 

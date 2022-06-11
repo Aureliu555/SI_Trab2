@@ -27,7 +27,7 @@ public class MapperGps implements IMapper<Gps, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Gps g =  em.find(Gps.class, id,LockModeType.PESSIMISTIC_READ );
+            Gps g =  em.find(Gps.class, id, LockModeType.PESSIMISTIC_READ);
             ds.validateWork();
             return g;
 
