@@ -10,6 +10,13 @@ import model.Alarme;
 import java.util.List;
 
 public class RepositoryAlarme implements IRepository<Alarme, Integer> {
+
+    /**
+     * Finds an Alarme object identified by the Id in the data base.
+     * @param Id - the id (primary key) that indetifies the Alarme object in the data base
+     * @throws Exception
+     * @return the found Alarme object or null in case it doesn't find any
+     */
     public Alarme find(Integer Id) throws Exception {
 
         MapperAlarme m = new MapperAlarme();
@@ -23,6 +30,11 @@ public class RepositoryAlarme implements IRepository<Alarme, Integer> {
         }
     }
 
+    /**
+     * Gets all Alarme objects in the data base.
+     * @throws Exception
+     * @return the list containing all Alarme objects
+     */
     public List<Alarme> getAll() throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,7 +50,11 @@ public class RepositoryAlarme implements IRepository<Alarme, Integer> {
         }
     }
 
-
+    /**
+     * Adds the new Alarme object passed as parameter to the data base.
+     * @param a - the new Alarme object that will be added to the data base
+     * @throws Exception
+     */
     public void add(Alarme a) throws Exception {
         MapperAlarme m = new MapperAlarme();
 
@@ -51,7 +67,11 @@ public class RepositoryAlarme implements IRepository<Alarme, Integer> {
         }
     }
 
-
+    /**
+     * Saves the changes done to the Alarme object passed as parameter in the data base.
+     * @param a - the updated Alarme object that will be saved in the data base.
+     * @throws Exception
+     */
     public void save(Alarme a) throws Exception {
         MapperAlarme m = new MapperAlarme();
 
@@ -64,13 +84,17 @@ public class RepositoryAlarme implements IRepository<Alarme, Integer> {
         }
     }
 
+    /**
+     * Deletes the Alarme object passed as parameter from the data base.
+     * @param a - the Alarme object that will be deleted from the data base
+     * @throws Exception
+     */
     public void delete(Alarme a) throws Exception {
         MapperAlarme m = new MapperAlarme();
 
         try {
             m.delete(a);
         }
-        //to catch the errors
         catch(Exception e) {
             System.out.println(e.getMessage());
             throw e;

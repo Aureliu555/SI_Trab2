@@ -10,6 +10,13 @@ import model.ClienteInstitucional;
 import java.util.List;
 
 public class RepositoryClienteInstitucional implements IRepository<ClienteInstitucional, Integer> {
+
+    /**
+     * Finds a ClienteInstitucional object identified by the Id in the data base.
+     * @param Id - the id (primary key) that indetifies the ClienteInstitucional object in the data base
+     * @throws Exception
+     * @return the found ClienteInstitucional object or null in case it doesn't find any
+     */
     public ClienteInstitucional find(Integer Id) throws Exception {
 
         MapperClienteInstitucional m = new MapperClienteInstitucional();
@@ -23,6 +30,11 @@ public class RepositoryClienteInstitucional implements IRepository<ClienteInstit
         }
     }
 
+    /**
+     * Gets all ClienteInstitucional objects in the data base.
+     * @throws Exception
+     * @return the list containing all ClienteInstitucional objects
+     */
     public List<ClienteInstitucional> getAll() throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,7 +50,11 @@ public class RepositoryClienteInstitucional implements IRepository<ClienteInstit
         }
     }
 
-
+    /**
+     * Adds the new ClienteInstitucional object passed as parameter to the data base.
+     * @param c - the new ClienteInstitucional object that will be added to the data base
+     * @throws Exception
+     */
     public void add(ClienteInstitucional c) throws Exception {
         MapperClienteInstitucional m = new MapperClienteInstitucional();
 
@@ -51,7 +67,11 @@ public class RepositoryClienteInstitucional implements IRepository<ClienteInstit
         }
     }
 
-
+    /**
+     * Saves the changes done to the ClienteInstitucional object passed as parameter in the data base.
+     * @param c - the updated ClienteInstitucional object that will be saved in the data base.
+     * @throws Exception
+     */
     public void save(ClienteInstitucional c) throws Exception {
         MapperClienteInstitucional m = new MapperClienteInstitucional();
 
@@ -64,6 +84,11 @@ public class RepositoryClienteInstitucional implements IRepository<ClienteInstit
         }
     }
 
+    /**
+     * Deletes the ClienteInstitucional object passed as parameter from the data base.
+     * @param c - the ClienteInstitucional object that will be deleted from the data base
+     * @throws Exception
+     */
     public void delete(ClienteInstitucional c) throws Exception {
         MapperClienteInstitucional m = new MapperClienteInstitucional();
 

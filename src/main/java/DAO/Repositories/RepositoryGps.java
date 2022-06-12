@@ -10,6 +10,13 @@ import model.Gps;
 import java.util.List;
 
 public class RepositoryGps implements IRepository<Gps, Integer> {
+
+    /**
+     * Finds a Gps object identified by the Id in the data base.
+     * @param Id - the id (primary key) that indetifies the Gps object in the data base
+     * @throws Exception
+     * @return the found Gps object or null in case it doesn't find any
+     */
     public Gps find(Integer Id) throws Exception {
 
         MapperGps m = new MapperGps();
@@ -23,6 +30,11 @@ public class RepositoryGps implements IRepository<Gps, Integer> {
         }
     }
 
+    /**
+     * Gets all Gps objects in the data base.
+     * @throws Exception
+     * @return the list containing all Gps objects
+     */
     public List<Gps> getAll() throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,7 +50,11 @@ public class RepositoryGps implements IRepository<Gps, Integer> {
         }
     }
 
-
+    /**
+     * Adds the new Gps object passed as parameter to the data base.
+     * @param g - the new Gps object that will be added to the data base
+     * @throws Exception
+     */
     public void add(Gps g) throws Exception {
         MapperGps m = new MapperGps();
 
@@ -52,6 +68,11 @@ public class RepositoryGps implements IRepository<Gps, Integer> {
     }
 
 
+    /**
+     * Saves the changes done to the Gps object passed as parameter in the data base.
+     * @param g - the updated Gps object that will be saved in the data base.
+     * @throws Exception
+     */
     public void save(Gps g) throws Exception {
         MapperGps m = new MapperGps();
 
@@ -64,6 +85,11 @@ public class RepositoryGps implements IRepository<Gps, Integer> {
         }
     }
 
+    /**
+     * Deletes the Gps object passed as parameter from the data base.
+     * @param g - the Gps object that will be deleted from the data base
+     * @throws Exception
+     */
     public void delete(Gps g) throws Exception {
         MapperGps m = new MapperGps();
 

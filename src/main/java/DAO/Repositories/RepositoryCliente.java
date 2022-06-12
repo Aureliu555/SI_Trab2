@@ -10,6 +10,13 @@ import model.Cliente;
 import java.util.List;
 
 public class RepositoryCliente implements IRepository<Cliente, Integer> {
+
+    /**
+     * Finds a Cliente object identified by the Id in the data base.
+     * @param Id - the id (primary key) that indetifies the Cliente object in the data base
+     * @throws Exception
+     * @return the found Cliente object or null in case it doesn't find any
+     */
     public Cliente find(Integer Id) throws Exception {
 
         MapperCliente m = new MapperCliente();
@@ -23,6 +30,11 @@ public class RepositoryCliente implements IRepository<Cliente, Integer> {
         }
     }
 
+    /**
+     * Gets all Cliente objects in the data base.
+     * @throws Exception
+     * @return the list containing all Cliente objects
+     */
     public List<Cliente> getAll() throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,21 +50,28 @@ public class RepositoryCliente implements IRepository<Cliente, Integer> {
         }
     }
 
-
+    /**
+     * Adds the new Cliente object passed as parameter to the data base.
+     * @param c - the new Cliente object that will be added to the data base
+     * @throws Exception
+     */
     public void add(Cliente c) throws Exception {
         MapperCliente m = new MapperCliente();
 
         try {
             m.create(c);
         }
-        //to catch the error
         catch(Exception e) {
             System.out.println(e.getMessage());
             throw e;
         }
     }
 
-
+    /**
+     * Saves the changes done to the Cliente object passed as parameter in the data base.
+     * @param c - the updated Cliente object that will be saved in the data base.
+     * @throws Exception
+     */
     public void save(Cliente c) throws Exception {
         MapperCliente m = new MapperCliente();
 
@@ -65,6 +84,11 @@ public class RepositoryCliente implements IRepository<Cliente, Integer> {
         }
     }
 
+    /**
+     * Deletes the Cliente object passed as parameter from the data base.
+     * @param c - the Cliente object that will be deleted from the data base
+     * @throws Exception
+     */
     public void delete(Cliente c) throws Exception {
         MapperCliente m = new MapperCliente();
 

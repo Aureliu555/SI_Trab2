@@ -10,6 +10,13 @@ import model.Processado;
 import java.util.List;
 
 public class RepositoryProcessado implements IRepository<Processado, Integer> {
+
+    /**
+     * Finds a Processado object identified by the Id in the data base.
+     * @param Id - the id (primary key) that indetifies the Processado object in the data base
+     * @throws Exception
+     * @return the found Processado object or null in case it doesn't find any
+     */
     public Processado find(Integer Id) throws Exception {
 
         MapperProcessado m = new MapperProcessado();
@@ -23,6 +30,11 @@ public class RepositoryProcessado implements IRepository<Processado, Integer> {
         }
     }
 
+    /**
+     * Gets all Processado objects in the data base.
+     * @throws Exception
+     * @return the list containing all Processado objects
+     */
     public List<Processado> getAll() throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,7 +50,11 @@ public class RepositoryProcessado implements IRepository<Processado, Integer> {
         }
     }
 
-
+    /**
+     * Adds the new Processado object passed as parameter to the data base.
+     * @param rp - the new Processado object that will be added to the data base
+     * @throws Exception
+     */
     public void add(Processado rp) throws Exception {
         MapperProcessado m = new MapperProcessado();
 
@@ -51,7 +67,11 @@ public class RepositoryProcessado implements IRepository<Processado, Integer> {
         }
     }
 
-
+    /**
+     * Saves the changes done to the Processado object passed as parameter in the data base.
+     * @param rp - the updated Processado object that will be saved in the data base.
+     * @throws Exception
+     */
     public void save(Processado rp) throws Exception {
         MapperProcessado m = new MapperProcessado();
 
@@ -64,6 +84,11 @@ public class RepositoryProcessado implements IRepository<Processado, Integer> {
         }
     }
 
+    /**
+     * Deletes the Processado object passed as parameter from the data base.
+     * @param rp - the Processado object that will be deleted from the data base
+     * @throws Exception
+     */
     public void delete(Processado rp) throws Exception {
         MapperProcessado m = new MapperProcessado();
 

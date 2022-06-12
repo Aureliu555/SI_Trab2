@@ -10,6 +10,13 @@ import model.ClienteParticular;
 import java.util.List;
 
 public class RepositoryClienteParticular implements IRepository<ClienteParticular, Integer> {
+
+    /**
+     * Finds a ClienteParticular object identified by the Id in the data base.
+     * @param Id - the id (primary key) that indetifies the ClienteParticular object in the data base
+     * @throws Exception
+     * @return the found ClienteParticular object or null in case it doesn't find any
+     */
     public ClienteParticular find(Integer Id) throws Exception {
 
         MapperClienteParticular m = new MapperClienteParticular();
@@ -23,6 +30,11 @@ public class RepositoryClienteParticular implements IRepository<ClienteParticula
         }
     }
 
+    /**
+     * Gets all ClienteParticular objects in the data base.
+     * @throws Exception
+     * @return the list containing all ClienteParticular objects
+     */
     public List<ClienteParticular> getAll() throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,6 +50,11 @@ public class RepositoryClienteParticular implements IRepository<ClienteParticula
         }
     }
 
+    /**
+     * Adds the new ClienteParticular object passed as parameter to the data base.
+     * @param c - the new ClienteParticular object that will be added to the data base
+     * @throws Exception
+     */
     public void add(ClienteParticular c) throws Exception {
         MapperClienteParticular m = new MapperClienteParticular();
 
@@ -49,6 +66,12 @@ public class RepositoryClienteParticular implements IRepository<ClienteParticula
             throw e;
         }
     }
+
+    /**
+     * Saves the changes done to the ClienteParticular object passed as parameter in the data base.
+     * @param c - the updated ClienteParticular object that will be saved in the data base.
+     * @throws Exception
+     */
     public void save(ClienteParticular c) throws Exception {
         MapperClienteParticular m = new MapperClienteParticular();
 
@@ -61,6 +84,11 @@ public class RepositoryClienteParticular implements IRepository<ClienteParticula
         }
     }
 
+    /**
+     * Deletes the ClienteParticular object passed as parameter from the data base.
+     * @param c - the ClienteParticular object that will be deleted from the data base
+     * @throws Exception
+     */
     public void delete(ClienteParticular c) throws Exception {
         MapperClienteParticular m = new MapperClienteParticular();
 

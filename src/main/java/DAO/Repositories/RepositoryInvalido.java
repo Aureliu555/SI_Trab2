@@ -10,6 +10,13 @@ import model.Invalido;
 import java.util.List;
 
 public class RepositoryInvalido implements IRepository<Invalido, Integer> {
+
+    /**
+     * Finds an Invalido object identified by the Id in the data base.
+     * @param Id - the id (primary key) that indetifies the Invalido object in the data base
+     * @throws Exception
+     * @return the found Invalido object or null in case it doesn't find any
+     */
     public Invalido find(Integer Id) throws Exception {
 
         MapperInvalido m = new MapperInvalido();
@@ -23,6 +30,11 @@ public class RepositoryInvalido implements IRepository<Invalido, Integer> {
         }
     }
 
+    /**
+     * Gets all Invalido objects in the data base.
+     * @throws Exception
+     * @return the list containing all Invalido objects
+     */
     public List<Invalido> getAll() throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,7 +50,11 @@ public class RepositoryInvalido implements IRepository<Invalido, Integer> {
         }
     }
 
-
+    /**
+     * Adds the new Invalido object passed as parameter to the data base.
+     * @param ri - the new Invalido object that will be added to the data base
+     * @throws Exception
+     */
     public void add(Invalido ri) throws Exception {
         MapperInvalido m = new MapperInvalido();
 
@@ -51,7 +67,11 @@ public class RepositoryInvalido implements IRepository<Invalido, Integer> {
         }
     }
 
-
+    /**
+     * Saves the changes done to the Invalido object passed as parameter in the data base.
+     * @param ri - the updated Invalido object that will be saved in the data base.
+     * @throws Exception
+     */
     public void save(Invalido ri) throws Exception {
         MapperInvalido m = new MapperInvalido();
 
@@ -64,6 +84,11 @@ public class RepositoryInvalido implements IRepository<Invalido, Integer> {
         }
     }
 
+    /**
+     * Deletes the Invalido object passed as parameter from the data base.
+     * @param ri - the Invalido object that will be deleted from the data base
+     * @throws Exception
+     */
     public void delete(Invalido ri) throws Exception {
         MapperInvalido m = new MapperInvalido();
 
