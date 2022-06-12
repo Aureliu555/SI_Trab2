@@ -45,6 +45,7 @@ public class RepositoryCliente implements IRepository<Cliente, Integer> {
         try {
             m.create(c);
         }
+        //to catch the error
         catch(Exception e) {
             System.out.println(e.getMessage());
             throw e;
