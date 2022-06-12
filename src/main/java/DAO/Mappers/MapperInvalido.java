@@ -7,6 +7,11 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
 
 public class MapperInvalido implements IMapper<Invalido, Integer> {
+    /**
+     * Creates an object Invalido saving it on database.
+     * @param ri is the object Invalido to be created.
+     * @throws Exception
+     */
     public void create(Invalido ri) throws Exception {
 
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
@@ -22,6 +27,12 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
         }
     }
 
+    /**
+     * Searches an object Invalido based on its id.
+     * @param id is the key of object Invalido.
+     * @return an object Invalido which key is equals to id.
+     * @throws Exception
+     */
     public Invalido read(Integer id) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,6 +49,11 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
         }
     }
 
+    /**
+     * Updates an object Invalido saving its changes on database.
+     * @param ri is the object Invalido to be updated.
+     * @throws Exception
+     */
     public void update(Invalido ri) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -57,6 +73,11 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
 
     }
 
+    /**
+     * Deletes an object Invalido from database.
+     * @param ri is the object Invalido to be deleted.
+     * @throws Exception
+     */
     public void delete(Invalido ri) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 

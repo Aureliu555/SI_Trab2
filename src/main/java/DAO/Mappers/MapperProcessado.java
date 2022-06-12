@@ -7,6 +7,11 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
 
 public class MapperProcessado implements IMapper<Processado, Integer> {
+    /**
+     * Creates an object Processado saving it on database.
+     * @param rp is the object Processado to be created.
+     * @throws Exception
+     */
     public void create(Processado rp) throws Exception {
 
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
@@ -22,6 +27,12 @@ public class MapperProcessado implements IMapper<Processado, Integer> {
         }
     }
 
+    /**
+     * Searches an object Processado based on its id.
+     * @param id is the key of object Processado.
+     * @return an object Processado which key is equals to id.
+     * @throws Exception
+     */
     public Processado read(Integer id) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,6 +49,11 @@ public class MapperProcessado implements IMapper<Processado, Integer> {
         }
     }
 
+    /**
+     * Updates an object Processado saving its changes on database.
+     * @param rp is the object Processado to be updated.
+     * @throws Exception
+     */
     public void update(Processado rp) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -57,6 +73,11 @@ public class MapperProcessado implements IMapper<Processado, Integer> {
 
     }
 
+    /**
+     * Deletes an object Processado from database.
+     * @param rp is the object Processado to be deleted.
+     * @throws Exception
+     */
     public void delete(Processado rp) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 

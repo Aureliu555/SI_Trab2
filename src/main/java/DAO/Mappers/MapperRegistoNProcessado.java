@@ -7,6 +7,11 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
 
 public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Integer> {
+    /**
+     * Creates an object RegistoNProcessado saving it on database.
+     * @param rnp is the object RegistoNProcessado to be created.
+     * @throws Exception
+     */
     public void create(RegistoNProcessado rnp) throws Exception {
 
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
@@ -22,6 +27,12 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
         }
     }
 
+    /**
+     * Searches an object RegistoNProcessado based on its id.
+     * @param id is the key of object RegistoNProcessado.
+     * @return an object RegistoNProcessado which key is equals to id.
+     * @throws Exception
+     */
     public RegistoNProcessado read(Integer id) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,6 +49,11 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
         }
     }
 
+    /**
+     * Updates an object RegistoNProcessado saving its changes on database.
+     * @param rnp is the object RegistoNProcessado to be updated.
+     * @throws Exception
+     */
     public void update(RegistoNProcessado rnp) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -56,6 +72,11 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
         }
     }
 
+    /**
+     * Deletes an object RegistoNProcessado from database.
+     * @param rnp is the object RegistoNProcessado to be deleted.
+     * @throws Exception
+     */
     public void delete(RegistoNProcessado rnp) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
