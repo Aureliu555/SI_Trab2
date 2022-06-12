@@ -1,9 +1,12 @@
 package model;
 
 import jakarta.persistence.*;
+import org.eclipse.persistence.annotations.OptimisticLocking;
+import org.eclipse.persistence.annotations.OptimisticLockingType;
 
 @Entity
 @Table(name = "invalido")
+@OptimisticLocking(type = OptimisticLockingType.VERSION_COLUMN)
 public class Invalido {
     @Id
     @Column(name = "id", nullable = false)

@@ -1,11 +1,14 @@
 package model;
 
 import jakarta.persistence.*;
+import org.eclipse.persistence.annotations.OptimisticLocking;
+import org.eclipse.persistence.annotations.OptimisticLockingType;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "processado")
+@OptimisticLocking(type = OptimisticLockingType.VERSION_COLUMN)
 public class Processado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

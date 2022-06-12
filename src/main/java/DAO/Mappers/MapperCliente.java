@@ -27,7 +27,7 @@ public class MapperCliente implements IMapper<Cliente, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Cliente c =  em.find(Cliente.class, id,LockModeType.PESSIMISTIC_READ );
+            Cliente c =  em.find(Cliente.class, id,LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             ds.validateWork();
             return c;
 
@@ -44,7 +44,7 @@ public class MapperCliente implements IMapper<Cliente, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Cliente c1 = em.find(Cliente.class, c.getId(),LockModeType.PESSIMISTIC_WRITE );
+            Cliente c1 = em.find(Cliente.class, c.getId(),LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             if (c1 == null)
                 throw new java.lang.IllegalAccessException("Entidade inexistente");
             c1.setId(c.getId());

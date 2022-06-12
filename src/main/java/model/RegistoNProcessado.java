@@ -1,6 +1,8 @@
 package model;
 
 import jakarta.persistence.*;
+import org.eclipse.persistence.annotations.OptimisticLocking;
+import org.eclipse.persistence.annotations.OptimisticLockingType;
 
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
@@ -8,6 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "registonprocessado")
+@OptimisticLocking(type = OptimisticLockingType.VERSION_COLUMN)
 public class RegistoNProcessado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

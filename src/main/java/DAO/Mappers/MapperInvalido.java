@@ -43,7 +43,7 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Invalido ri1 = em.find(Invalido.class, ri.getId(),LockModeType.PESSIMISTIC_WRITE );
+            Invalido ri1 = em.find(Invalido.class, ri.getId(),LockModeType.OPTIMISTIC_FORCE_INCREMENT  );
             if (ri1 == null)
                 throw new java.lang.IllegalAccessException("Entidade inexistente");
             ri1.setId(ri.getId());
@@ -62,7 +62,7 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Invalido ri1 = em.find(Invalido.class, ri.getId(),LockModeType.PESSIMISTIC_WRITE );
+            Invalido ri1 = em.find(Invalido.class, ri.getId(),LockModeType.OPTIMISTIC_FORCE_INCREMENT  );
             if (ri1 == null)
                 throw new java.lang.IllegalAccessException("Entidade inexistente");
             em.remove(ri1);
