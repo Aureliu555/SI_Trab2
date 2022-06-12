@@ -4,6 +4,11 @@ import jakarta.persistence.*;
 
 public class M {
     //function
+
+    /**
+     * Automatically, when an object Alarme is created, the property 'numalarme' number of object Veiculo is updated.
+     * @throws Exception if any parameter violate the integrity constraints of any object.
+     */
     public void testNumAlarms_trigger() throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();

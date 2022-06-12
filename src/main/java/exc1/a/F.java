@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 
 //Already functional (working)
 public class F {
+    /**
+     * Processes all objects RegistoNProcessado and distributing them as objects Invalido and objects Processado
+     * @throws Exception if any parameter violate the integrity constraints of any object.
+     */
     public void processUnprocessedRegisters() throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();

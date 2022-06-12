@@ -5,6 +5,12 @@ import jakarta.persistence.*;
 import java.util.List;
 
 public class E {
+    /**
+     * Returns the total number of objects Alarme for a given year and object Veiculo passed as parameters.
+     * @param year is the year of alarms we want to count.
+     * @param regTag is the reference of object Veiculo.
+     * @throws Exception if any parameter violate the integrity constraints of any object.
+     */
     public List<Integer> countAlarms(Integer year, String regTag) throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();
@@ -29,6 +35,11 @@ public class E {
         }
     }
 
+    /**
+     * Returns the total number of objects Alarme for a given year passed as parameter
+     * @param year is the year of alarms we want to count.
+     * @throws Exception if any parameter violate the integrity constraints of any object.
+     */
     public List<Integer> countAlarms(Integer year) throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();

@@ -4,6 +4,12 @@ import jakarta.persistence.*;
 
 public class L {
     //procedure
+
+    /**
+     * Not working.
+     * @param condition
+     * @throws Exception
+     */
     public void disableClientOnDeletion(Boolean condition) throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();

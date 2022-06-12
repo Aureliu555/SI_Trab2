@@ -3,6 +3,10 @@ package exc1.a;
 import jakarta.persistence.*;
 
 public class I {
+    /**
+     * Creates a view of all objects Alarme information.
+     * @throws Exception if any parameter violate the integrity constraints of any object.
+     */
     public void createViewOfAlarm() throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();

@@ -3,8 +3,22 @@ package exc1.a;
 import jakarta.persistence.*;
 
 public class H {
+    /**
+     * Creates an object Veiculo with the respective object Veiculo information associated to the object Gps, and associates
+     * it with an object Cliente.
+     * @param regTag is the value of property 'matricula' of object Veiculo to be created.
+     * @param clientNif is the value of property 'nif' of object Veiculo to be created.
+     * @param name is the value of property 'nomecondutor' of object Veiculo to be created.
+     * @param telephone is the value of property 'telefone' of object Veiculo to be created.
+     * @param alarms is the value of property 'numalarmes' of object Veiculo to be created.
+     * @param gps is the value of property 'gps' of object Veiculo to be created.
+     * @param longitude is the value of property 'longitude' of object ZonaVerde to be created.
+     * @param latitude is the value of property 'latitude' of object ZonaVerde to be created.
+     * @param radius is the value of property 'raio' of object ZonaVerde to be created.
+     * @throws Exception if any parameter violate the integrity constraints of any object.
+     */
     public void createAndAssociateVehicle(String regTag, Integer clientNif, String name, String telephone, Integer alarms,
-                                          Integer gps, Double longitude, Double latitude, Double radius) throws Exception {
+                  Integer gps, Double longitude, Double latitude, Double radius) throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();
         try {

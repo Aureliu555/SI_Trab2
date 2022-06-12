@@ -3,6 +3,10 @@ package exc1.a;
 import jakarta.persistence.*;
 
 public class J {
+    /**
+     * Not working.
+     * @throws Exception
+     */
     public void insertIntoAlarmsAndProcessedRegistration() throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();

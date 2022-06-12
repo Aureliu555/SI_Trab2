@@ -3,6 +3,11 @@ package exc1.a;
 import jakarta.persistence.*;
 
 public class G {
+    /**
+     * Analyzes all objects Processado when it is created and that
+     * generates the corresponding object Alarme if it is outside any of its objects ZonaVerde.
+     * @throws Exception if any of data violates any rules of the database
+     */
     public void test_alarm_trigger() throws Exception {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("t41dg8");
         EntityManager em = emf.createEntityManager();
