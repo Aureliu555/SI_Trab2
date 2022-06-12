@@ -9,7 +9,7 @@ import exc2.a.F;
 public class App {
     @SuppressWarnings("unchecked")
     public static void main(String[] args) throws Exception {
-        F testF = new F();
-        testF.processUnprocessedRegisters();
+        NoStoredProcedure test_h = new NoStoredProcedure();
+        test_h.createAndAssociateVehicle("10-PG-20",689425389,"Pedro Miguel", "912345678",0,2, null, null, null);
     }
 }

@@ -27,7 +27,7 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            RegistoNProcessado rnp =  em.find(RegistoNProcessado.class, id,LockModeType.PESSIMISTIC_READ );
+            RegistoNProcessado rnp =  em.find(RegistoNProcessado.class, id,LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             ds.validateWork();
             return rnp;
 

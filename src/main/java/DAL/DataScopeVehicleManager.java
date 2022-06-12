@@ -3,6 +3,9 @@ package DAL;
 import DAO.Mappers.*;
 import DAO.Repositories.*;
 import exc1.a.G;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.LockModeType;
+import jakarta.persistence.TypedQuery;
 import model.*;
 
 import java.util.List;
@@ -47,6 +50,22 @@ public class DataScopeVehicleManager extends AbstractDataScope implements AutoCl
 
     public List<ZonaVerde> getAllZonaVerde() throws Exception {
         return new RepositoryZonaVerde().getAll();
+    }
+
+    public List<Veiculo> getAllVehiclesByClientNif(Integer id) throws Exception {
+        try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
+
+            EntityManager em = ds.getEntityManager();
+            TypedQuery<Veiculo> qv = em.createQuery("select v from Veiculo as v where v.nif.id = ?1", Veiculo.class);
+            List<Veiculo> lv = qv.setParameter(1, id).setLockMode(LockModeType.PESSIMISTIC_READ).getResultList();
+            ds.validateWork();
+            return lv;
+
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+            throw e;
+        }
     }
 
     //------------------------------------ Find ------------------------------------

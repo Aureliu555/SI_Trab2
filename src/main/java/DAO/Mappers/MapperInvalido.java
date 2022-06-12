@@ -27,7 +27,7 @@ public class MapperInvalido implements IMapper<Invalido, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Invalido ri =  em.find(Invalido.class, id,LockModeType.PESSIMISTIC_READ );
+            Invalido ri =  em.find(Invalido.class, id,LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             ds.validateWork();
             return ri;
 

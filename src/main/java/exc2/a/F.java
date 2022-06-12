@@ -44,7 +44,6 @@ public class F {
 
                     ri.add(inv);
 
-
                 } else {
                     List<Processado> listProcessed = vm.getAllProcessado();
                     Processado p;

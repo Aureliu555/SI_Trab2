@@ -27,7 +27,7 @@ public class MapperProcessado implements IMapper<Processado, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Processado rp =  em.find(Processado.class, id,LockModeType.PESSIMISTIC_READ );
+            Processado rp =  em.find(Processado.class, id,LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             ds.validateWork();
             return rp;
 

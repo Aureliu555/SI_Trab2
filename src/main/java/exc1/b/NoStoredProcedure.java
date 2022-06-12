@@ -26,20 +26,18 @@ public class NoStoredProcedure {
                 MapperGps mGps = new MapperGps();
                 RepositoryVeiculo rv = new RepositoryVeiculo();
 
-                TypedQuery<Cliente> qc = em.createQuery("select c from Cliente c where c.id = ?1",Cliente.class);
-                List<Cliente> listC = qc.setParameter(1, clientNif).setLockMode(LockModeType.PESSIMISTIC_READ).getResultList();
+                Cliente c = vm.findClient(clientNif);
 
-                if (listC.size() == 0){
+                if (c == null){
                     em.getTransaction().rollback();
                     throw new Exception("O nif que inseriu não pertence a nenhum cliente");
                 }
 
-                TypedQuery<ClienteParticular> q = em.createQuery("select cp from ClienteParticular as cp join Cliente as c on cp.id = c.id where cp.id = ?1", ClienteParticular.class);
-                List<ClienteParticular> list = q.setParameter(1, clientNif).setLockMode(LockModeType.PESSIMISTIC_READ).getResultList();
+                ClienteParticular cp = vm.findParticularClient(clientNif);
 
-                if (list.size() == 1) {
-                    TypedQuery<Veiculo> qv = em.createQuery("select v from Veiculo as v where v.nif.id = ?1", Veiculo.class);
-                    List<Veiculo> lv = qv.setParameter(1, clientNif).setLockMode(LockModeType.PESSIMISTIC_READ).getResultList();
+                if (cp != null) {
+
+                    List<Veiculo> lv = vm.getAllVehiclesByClientNif(clientNif);
 
                     if (lv.size() < 3){
                         Veiculo vehicle = new Veiculo();
