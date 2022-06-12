@@ -7,6 +7,12 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
 
 public class MapperCliente implements IMapper<Cliente, Integer> {
+
+    /**
+     * Creates an object Cliente and then saves it on database.
+     * @param c an object Cliente.
+     * @throws Exception
+     */
     public void create(Cliente c) throws Exception {
 
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
@@ -22,6 +28,12 @@ public class MapperCliente implements IMapper<Cliente, Integer> {
         }
     }
 
+    /**
+     * Searches an object Cliente on database based on its id and returns it.
+     * @param id is the key of the object Cliente to be searched..
+     * @return the object Cliente with the id passed as parameter.
+     * @throws Exception
+     */
     public Cliente read(Integer id) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -39,6 +51,11 @@ public class MapperCliente implements IMapper<Cliente, Integer> {
         }
     }
 
+    /**
+     * Updates an object Cliente saving its changes on database.
+     * @param c is the object Cliente.
+     * @throws Exception
+     */
     public void update(Cliente c) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -59,6 +76,12 @@ public class MapperCliente implements IMapper<Cliente, Integer> {
 
     }
 
+
+    /**
+     * Deletes an object Cliente from database permanently.
+     * @param c is the object Cliente to be deleted.
+     * @throws Exception
+     */
     public void delete(Cliente c) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
