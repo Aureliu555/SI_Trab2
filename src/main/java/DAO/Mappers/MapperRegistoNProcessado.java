@@ -43,7 +43,7 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            RegistoNProcessado rnp1 = em.find(RegistoNProcessado.class, rnp.getId(),LockModeType.PESSIMISTIC_WRITE );
+            RegistoNProcessado rnp1 = em.find(RegistoNProcessado.class, rnp.getId(),LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             if (rnp1 == null)
                 throw new java.lang.IllegalAccessException("Entidade inexistente");
             rnp1.setId(rnp.getId());
@@ -61,7 +61,7 @@ public class MapperRegistoNProcessado implements IMapper<RegistoNProcessado, Int
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            RegistoNProcessado rnp1 = em.find(RegistoNProcessado.class, rnp.getId(),LockModeType.PESSIMISTIC_WRITE );
+            RegistoNProcessado rnp1 = em.find(RegistoNProcessado.class, rnp.getId(),LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             if (rnp1 == null)
                 throw new java.lang.IllegalAccessException("Entidade inexistente");
             em.remove(rnp1);

@@ -62,7 +62,7 @@ public class MapperProcessado implements IMapper<Processado, Integer> {
 
             EntityManager em = ds.getEntityManager();
             em.flush();
-            Processado rp1 = em.find(Processado.class, rp.getId(),LockModeType.OPTIMISTIC_FORCE_INCREMENT  );
+            Processado rp1 = em.find(Processado.class, rp.getId(),LockModeType.OPTIMISTIC_FORCE_INCREMENT );
             if (rp1 == null)
                 throw new java.lang.IllegalAccessException("Entidade inexistente");
             em.remove(rp1);
