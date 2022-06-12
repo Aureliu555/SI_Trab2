@@ -2,6 +2,7 @@ package model;
 
 import jakarta.persistence.*;
 
+import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
@@ -17,7 +18,7 @@ public class Alarme {
     private Processado processado;
 
     @Column(name = "datahora", nullable = false)
-    private Instant datahora;
+    private Timestamp datahora;
 
     @Version
     @Column(name = "vrs")
@@ -39,11 +40,11 @@ public class Alarme {
         this.processado = processado;
     }
 
-    public Instant getDatahora() {
+    public Timestamp getDatahora() {
         return datahora;
     }
 
-    public void setDatahora(Instant datahora) {
+    public void setDatahora(Timestamp datahora) {
         this.datahora = datahora;
     }
 
