@@ -7,6 +7,11 @@ import jakarta.persistence.LockModeType;
 import model.ClienteParticular;
 
 public class MapperClienteParticular implements IMapper<ClienteParticular, Integer> {
+    /**
+     * Creates an
+     * @param c
+     * @throws Exception
+     */
     public void create(ClienteParticular c) throws Exception {
 
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {

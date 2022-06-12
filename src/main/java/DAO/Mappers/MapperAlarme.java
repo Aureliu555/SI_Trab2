@@ -7,6 +7,11 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
 
 public class MapperAlarme implements IMapper<Alarme, Integer> {
+    /**
+     * Creates an object Alarme and saves on database.
+     * @param a is the object Alarme to be created.
+     * @throws Exception if there's an object with the same id parameter in the database.
+     */
     public void create(Alarme a) throws Exception {
 
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
@@ -22,6 +27,12 @@ public class MapperAlarme implements IMapper<Alarme, Integer> {
         }
     }
 
+    /**
+     * Searches an object Alarme on database based on its id.
+     * @param id is the key of the object Alarme to be searched.
+     * @return the object Alarme with the id passed as parameter
+     * @throws Exception if the object was not found.
+     */
     public Alarme read(Integer id) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -39,6 +50,11 @@ public class MapperAlarme implements IMapper<Alarme, Integer> {
         }
     }
 
+    /**
+     * Updates an object Alarme saving it's changes on database.
+     * @param a is the object Alarme to be updated.
+     * @throws Exception
+     */
     public void update(Alarme a) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -59,6 +75,11 @@ public class MapperAlarme implements IMapper<Alarme, Integer> {
 
     }
 
+    /**
+     * Deletes an object Alarme from database permanently.
+     * @param a is an object of type Alarme.
+     * @throws Exception
+     */
     public void delete(Alarme a) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 

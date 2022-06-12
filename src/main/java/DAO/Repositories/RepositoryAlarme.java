@@ -70,6 +70,7 @@ public class RepositoryAlarme implements IRepository<Alarme, Integer> {
         try {
             m.delete(a);
         }
+        //to catch the errors
         catch(Exception e) {
             System.out.println(e.getMessage());
             throw e;

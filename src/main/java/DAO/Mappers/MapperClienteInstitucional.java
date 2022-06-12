@@ -7,6 +7,11 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
 
 public class MapperClienteInstitucional implements IMapper<ClienteInstitucional, Integer> {
+    /**
+     * Creates an object ClienteInstitucional saving it on database.
+     * @param c is the object ClienteInstitucional.
+     * @throws Exception
+     */
     public void create(ClienteInstitucional c) throws Exception {
 
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
@@ -22,6 +27,12 @@ public class MapperClienteInstitucional implements IMapper<ClienteInstitucional,
         }
     }
 
+    /**
+     * Searches for an object ClienteInstitucional based on its id.
+     * @param id is the key of the object ClienteInstitucional to be searched.
+     * @return the object ClienteInstitucional with the id in case.
+     * @throws Exception
+     */
     public ClienteInstitucional read(Integer id) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -38,6 +49,11 @@ public class MapperClienteInstitucional implements IMapper<ClienteInstitucional,
         }
     }
 
+    /**
+     * Updates an object ClienteInstitucional saving its changes on database.
+     * @param c is the object ClienteInstitucional to be updated.
+     * @throws Exception
+     */
     public void update(ClienteInstitucional c) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
@@ -57,6 +73,11 @@ public class MapperClienteInstitucional implements IMapper<ClienteInstitucional,
 
     }
 
+    /**
+     * Deletes an object ClienteInstitucional from database.
+     * @param c is the object ClienteInstitucional to be deleted.
+     * @throws Exception
+     */
     public void delete(ClienteInstitucional c) throws Exception {
         try (DataScopeVehicleManager ds = new DataScopeVehicleManager()) {
 
