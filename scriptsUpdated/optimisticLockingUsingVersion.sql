@@ -3,10 +3,8 @@ language plpgsql as $$
 
 declare c int;
 begin
-	if new.vers is null then
-	new.vers = 0;
-	elseif new.vers = old.vers then
-	new.vers = new.vers + 1;
+	if new.vrs = old.vrs then
+	new.vrs = new.vrs + 1;
 	end if;
 return new;
 end; $$;

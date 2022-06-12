@@ -5,13 +5,15 @@ create table if not exists cliente(
     nome varchar(150) not null,
     telefone varchar(10) check (left(telefone,1) = ('9') and length(telefone) = 9) not null,
     morada varchar(150) not null,
-    cpNif integer
+    cpNif integer,
+	vrs integer default 0
 );
 
 create table if not exists clienteParticular(
 	nif integer primary key,
 	cc integer unique check ((length(cc::text) = 8) and cc > 0) not null,
-	foreign key (nif) references cliente (nif) 
+	foreign key (nif) references cliente (nif),
+    vrs integer default 0
 );
 
 alter table cliente
@@ -20,7 +22,8 @@ alter table cliente
 create table if not exists clienteInstitucional(
 	nif integer primary key,
 	nomeContato varchar(150) not null,
-	foreign key (nif) references cliente (nif) 
+	foreign key (nif) references cliente (nif),
+    vrs integer default 0
 );
 
 create table if not exists veiculo(
@@ -30,7 +33,8 @@ create table if not exists veiculo(
 	telefone varchar(10) check (left(telefone,1) = ('9') and length(telefone) = 9),
 	numAlarmes int default 0 check (numAlarmes >= 0),
 	gps integer,
-	foreign key (nif) references cliente (nif)
+	foreign key (nif) references cliente (nif),
+    vrs integer default 0
 );
 
 create table if not exists gps(
@@ -40,7 +44,8 @@ create table if not exists gps(
 	latitude float check(latitude between 0.0 and 90.0),
 	estado varchar(20) check (estado in ('Activo','PausaDeAlarmes', 'Inactivo')) not null,
 	matricula varchar(10),
-	foreign key (matricula) references veiculo (matricula)
+	foreign key (matricula) references veiculo (matricula),
+    vrs integer default 0
 );
 
 alter table veiculo
@@ -52,7 +57,8 @@ create table if not exists zonaVerde(
 	primary key(latitude, longitude),
 	raio real check (raio > 0.0) not null,
 	matricula varchar(10),
-	foreign key(matricula) references veiculo (matricula)
+	foreign key(matricula) references veiculo (matricula),
+    vrs integer default 0
 );
 
 create table if not exists registoNProcessado(
@@ -60,12 +66,14 @@ create table if not exists registoNProcessado(
 	longitude real check(longitude between 0.0 and 180.0),
 	latitude real check(latitude between 0.0 and 90.0),
 	dat date check (dat <= CURRENT_DATE),
-	gps integer
+	gps integer,
+    vrs integer default 0
 );
 
 create table if not exists invalido(
 	id integer primary key,
-	foreign key (id) references registoNProcessado(id) 
+	foreign key (id) references registoNProcessado(id),
+    vrs integer default 0
 );
 
 create table if not exists processado(
@@ -76,12 +84,16 @@ create table if not exists processado(
 	gps integer not null,
 	rnp integer,
 	foreign key (gps) references gps(id),
-	foreign key (rnp) references registoNProcessado(id) 
+	foreign key (rnp) references registoNProcessado(id),
+    vrs integer default 0
 );
 
 create table if not exists alarme(
 	id integer primary key,
 	dataHora timestamp check(dataHora <= CURRENT_TIMESTAMP ) not null,
-	foreign key (id) references processado(id) 
+	foreign key (id) references processado(id),
+    vrs integer default 0
 );
 commit;
+
+--rollback;
